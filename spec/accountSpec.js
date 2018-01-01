@@ -4,10 +4,21 @@ describe('Account', function() {
     account = new Account('Marco', 'Vanali')
   });
 
-  it('Check if personal information can be stored in an instance of the Account class', function() {
-    expect(account.getName()).toEqual('Marco')
-    expect(account.getSurname()).toEqual('Vanali')
+  describe('getName', function() {
+    it('get the name of the accoutn woner store in the this.name variable', function() {
+      expect(account.getName()).toEqual('Marco')
+    });
   });
+
+  describe('getSurname', function() {
+    it('get the name of the accoutn woner store in the this.name variable', function() {
+      expect(account.getSurname()).toEqual('Vanali')
+    });
+  });
+
+
+
+
 
 
 });
