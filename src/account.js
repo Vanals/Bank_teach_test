@@ -17,6 +17,12 @@
   Account.prototype.getBalance = function () {
     return this.balance
   };
+  
+  Account.prototype.depositMoney = function (money) {
+    return this.balance += money
+  };
+
+
 
   exports.Account = Account;
 })(this);
