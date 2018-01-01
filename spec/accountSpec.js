@@ -5,7 +5,9 @@ describe('Account', function() {
   });
 
   it('Check if personal information can be stored in an instance of the Account class', function() {
-    expect(account.name).toEqual('Marco')
-    expect(account.surname).toEqual('Vanali')
+    expect(account.getName()).toEqual('Marco')
+    expect(account.getSurname()).toEqual('Vanali')
   });
+
+
 });
