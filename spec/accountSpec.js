@@ -17,13 +17,17 @@ describe('Account', function() {
   });
 
   describe('getBalance', function() {
-    it('Get your actual balance', function() {
+    it('get your actual balance', function() {
       expect(account.getBalance()).toEqual(0)
     });
   });
 
-
-
+  describe('depositMoney', function() {
+    it('deposit an ammount of money in the balance variable', function() {
+      account.depositMoney(1000)
+      expect(account.getBalance()).toEqual(1000)
+    });
+  });
 
 
 });
