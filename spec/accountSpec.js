@@ -16,6 +16,11 @@ describe('Account', function() {
     });
   });
 
+  describe('getBalance', function() {
+    it('Get your actual balance', function() {
+      expect(account.getBalance()).toEqual(0)
+    });
+  });
 
 
 
