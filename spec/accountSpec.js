@@ -1,18 +1,24 @@
 describe('Account', function() {
 
   beforeEach(function() {
-    account = new Account('Marco', 'Vanali')
+    account = new Account('Marco Vanali')
   });
+  //
+  // describe('getName', function() {
+  //   it('get the name of the account owner store in the this.name variable', function() {
+  //     expect(account.getName()).toEqual('Marco')
+  //   });
+  // });
+  //
+  // describe('getSurname', function() {
+  //   it('get the name of the accoutn woner store in the this.name variable', function() {
+  //     expect(account.getSurname()).toEqual('Vanali')
+  //   });
+  // });
 
-  describe('getName', function() {
-    it('get the name of the account owner store in the this.name variable', function() {
-      expect(account.getName()).toEqual('Marco')
-    });
-  });
-
-  describe('getSurname', function() {
-    it('get the name of the accoutn woner store in the this.name variable', function() {
-      expect(account.getSurname()).toEqual('Vanali')
+  describe('getOwner', function() {
+    it('get the name of the account owner store in the this.owner variable', function() {
+      expect(account.getOwner()).toEqual('Marco Vanali')
     });
   });
 

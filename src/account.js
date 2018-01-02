@@ -1,19 +1,14 @@
 (function(exports) {
 
-  function Account(name, surname, transfer = Transfer) {
+  function Account(ownerName, transfer = Transfer) {
     this.transfer = transfer
     this.transfersList = []
-    this.name = name
-    this.surname = surname
+    this.owner = ownerName
     this.balance = 0
   }
 
-  Account.prototype.getName = function () {
-    return this.name
-  };
-
-  Account.prototype.getSurname = function () {
-    return this.surname
+  Account.prototype.getOwner = function () {
+    return this.owner
   };
 
   Account.prototype.getBalance = function () {

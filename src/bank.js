@@ -2,10 +2,12 @@
 
   function Bank(account = Account) {
     this.account = account
-    this.accounts = [{owner:}]
+    this.accounts = []
   }
 
-
+  Bank.prototype.newAccount = function(ownerName) {
+    this.accounts.push(new this.account(ownerName))
+  };
 
 exports.Bank = Bank;
 
@@ -13,3 +15,6 @@ exports.Bank = Bank;
 
 // Create account
 // take care of deposit and withdraw through the account
+
+
+// map the array, if oneofthelement.key === marco Return that hash/element
