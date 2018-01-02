@@ -31,8 +31,8 @@ describe('Account', function() {
 
   describe('createNewDeposit', function() {
     it('create a new instance of the class Deposit and push it in the deposits array', function() {
-      account.crateNewDeposit()
-      expect(account.deposits[0].constructor).toEqual(Deposit)
+      account.createNewDeposit()
+      expect(account.depositsList[0].constructor).toEqual(Deposit)
     });
   });
 

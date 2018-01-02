@@ -35,7 +35,7 @@ describe('Deposit', function() {
   describe('recordDate', function() {
     it('record the currante Date in the this.date variable', function() {
       deposit._recordDate()
-      expect(deposit._getDate()).toEqual("01/01/2018")
+      expect(deposit._getDate()).toEqual("01/02/2018")
     });
   });
 
