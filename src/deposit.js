@@ -1,13 +1,13 @@
 (function(exports) {
 
   function Deposit() {
-    this.balanceAtTheTime = 0
+    this.balanceAfterDeposit = 0
     this.moneyDeposited = 0
     this.date = "NotGiven"
   }
 
   Deposit.prototype.recordDeposit = function (moneyDepositing, Balance) {
-    this.balanceAtTheTime = Balance
+    this.balanceAfterDeposit = Balance
     this.moneyDeposited = moneyDepositing
     this._recordDate()
   };
@@ -34,7 +34,7 @@
     return this.date
   };
 
-  
+
   exports.Deposit = Deposit;
 
 })(this);

@@ -27,7 +27,7 @@ describe('Deposit', function() {
   describe('recordDeposit', function() {
     it('record an amount of money in the moneyDeposited variable and add it in the Account balance', function() {
       deposit.recordDeposit(fakeaccount.depositMoney(1000), fakeaccount.getBalance())
-      expect(deposit.balanceAtTheTime).toEqual(1001)
+      expect(deposit.balanceAfterDeposit).toEqual(1001)
       expect(deposit.moneyDeposited).toEqual(1000)
     });
   });
