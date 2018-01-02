@@ -1,18 +1,18 @@
 (function(exports) {
 
-  function Transferment() {
-    this.balanceAfterTransferment = 0
+  function Transfer() {
+    this.balanceAfterTransfer = 0
     this.moneyTransfered = 0
     this.date = "NotGiven"
   }
 
-  Transferment.prototype.recordTransferment = function (moneyTransfering, Balance) {
-    this.balanceAfterTransferment = Balance
+  Transfer.prototype.recordTransfer = function (moneyTransfering, Balance) {
+    this.balanceAfterTransfer = Balance
     this.moneyTransfered = moneyTransfering
     this._recordDate()
   };
 
-  Transferment.prototype._recordDate = function () {
+  Transfer.prototype._recordDate = function () {
     var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth()+1; //January is 0!
@@ -30,11 +30,11 @@
     return this.date = today
   };
 
-  Transferment.prototype._getDate = function () {
+  Transfer.prototype._getDate = function () {
     return this.date
   };
 
 
-  exports.Transferment = Transferment;
+  exports.Transfer = Transfer;
 
 })(this);

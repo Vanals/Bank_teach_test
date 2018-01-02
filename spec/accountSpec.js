@@ -38,10 +38,10 @@ describe('Account', function() {
     });
   });
 
-  describe('createNewTransferment', function() {
-    it('create a new instance of the class Transferment and push it in the transfermentsList array', function() {
-      account.createNewTransferment()
-      expect(account.transfermentsList[0].constructor).toEqual(Transferment)
+  describe('createNewTransfer', function() {
+    it('create a new instance of the class Transfer and push it in the transfersList array', function() {
+      account.createNewTransfer()
+      expect(account.transfersList[0].constructor).toEqual(Transfer)
     });
   });
 

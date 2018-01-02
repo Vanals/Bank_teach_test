@@ -1,8 +1,8 @@
 (function(exports) {
 
-  function Account(name, surname, transferment = Transferment) {
-    this.transferment = transferment
-    this.transfermentsList = []
+  function Account(name, surname, transfer = Transfer) {
+    this.transfer = transfer
+    this.transfersList = []
     this.name = name
     this.surname = surname
     this.balance = 0
@@ -30,29 +30,29 @@
     return  money
   };
 
-  Account.prototype.createNewTransferment = function () {
-    this.transfermentsList.push(new this.transferment())
+  Account.prototype.createNewTransfer = function () {
+    this.transfersList.push(new this.transfer())
   };
 
   Account.prototype.depositAndRecord = function (moneyToTransfer) {
-    this.createNewTransferment()
+    this.createNewTransfer()
     this.depositMoney(moneyToTransfer)
-    this._lastTransfermentInstance().recordTransferment(moneyToTransfer, this.getBalance())
+    this._lastTransferInstance().recordTransfer(moneyToTransfer, this.getBalance())
   };
 
   Account.prototype.withdrawAndRecord = function (moneyToTransfer) {
-    this.createNewTransferment()
-    this._lastTransfermentInstance().recordTransferment(this.withdrawMoney(moneyToTransfer), this.getBalance())
+    this.createNewTransfer()
+    this._lastTransferInstance().recordTransfer(this.withdrawMoney(moneyToTransfer), this.getBalance())
   };
 
-  Account.prototype._lastTransfermentInstance = function () {
-    return this.transfermentsList.slice(-1)[0]
+  Account.prototype._lastTransferInstance = function () {
+    return this.transfersList.slice(-1)[0]
   };
 
   Account.prototype.accountStatement = function () {
-    transfermentsInfo= this.transfermentsList.map(transf => `${transf.date}   || ${transf.moneyTransfered} ||     ${transf.balanceAfterTransferment}\n`)
+    transfersInfo= this.transfersList.map(transf => `${transf.date}   || ${transf.moneyTransfered} ||     ${transf.balanceAfterTransfer}\n`)
     var statement = 'date || transferment || balance \n' +
-                    `${transfermentsInfo.join('')}`
+                    `${transfersInfo.join('')}`
     return statement
   };
 

@@ -1,5 +1,5 @@
 
-describe('Transferment', function() {
+describe('Transfer', function() {
 
   //MOCKS
 
@@ -18,24 +18,25 @@ describe('Transferment', function() {
   //MOCKS
 
   beforeEach(function() {
-    transferment = new Transferment()
+    transfer = new Transfer()
     fakeaccount = new FakeAccount()
   });
 
 
 
-  describe('recordTransferment', function() {
+  describe('recordTransfer', function() {
     it('record an amount of money in the moneyTransfered variable and add it in the Account balance', function() {
-      transferment.recordTransferment(fakeaccount.depositMoney(1000), fakeaccount.getBalance())
-      expect(transferment.balanceAfterTransferment).toEqual(1001)
-      expect(transferment.moneyTransfered).toEqual(1000)
+      transfer.recordTransfer(fakeaccount.depositMoney(1000), fakeaccount.getBalance())
+      expect(transfer.balanceAfterTransfer).toEqual(1001)
+      expect(transfer.moneyTransfered).toEqual(1000)
     });
   });
 
   describe('recordDate', function() {
     it('record the currante Date in the this.date variable', function() {
-      transferment._recordDate()
-      expect(transferment._getDate()).toEqual("01/02/2018")
+      transfer.recorddate = jasmine.createSpy("Date").and.returnValue("01/02/2018")
+      transfer._recordDate()
+      expect(transfer.date).toEqual("01/02/2018")
     });
   });
 

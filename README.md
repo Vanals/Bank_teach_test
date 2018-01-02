@@ -51,8 +51,6 @@ So I can buy a new ultra HD tv
 I want be able to withdraw the money I need.
 ```
 
-
-
 ```
 As a client
 So I can check my balance history
