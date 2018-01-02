@@ -1,3 +1,4 @@
+
 describe('Deposit', function() {
 
   //MOCKS
@@ -39,7 +40,7 @@ describe('Deposit', function() {
   });
 
 // Now that u tested recordDeposit u need to create a method in the account class which Run
-//recorddeposit on a new instance of the deposit class recording all the information and passing as argument
+// recorddeposit on a new instance of the deposit class recording all the information and passing as argument
 // the balance and the money u deposited running the account method depositMoney.
 
 });
