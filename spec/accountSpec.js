@@ -26,7 +26,15 @@ describe('Account', function() {
     it('depositan ammount of money in the balance variable', function() {
       account.depositMoney(1000)
       expect(account.getBalance()).toEqual(1000)
-    }); 
+    });
+  });
+
+  describe('withdrawMoney', function() {
+    it('withdrawn an ammount of money from the balance variable', function() {
+      account.depositMoney(1000)
+      account.withdrawMoney(200)
+      expect(account.getBalance()).toEqual(800)
+    });
   });
 
   describe('createNewTransferment', function() {
@@ -35,5 +43,7 @@ describe('Account', function() {
       expect(account.transfermentsList[0].constructor).toEqual(Transferment)
     });
   });
+
+
 
 });

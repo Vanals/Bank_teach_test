@@ -25,14 +25,23 @@
     return money
   };
 
+  Account.prototype.withdrawMoney = function (money) {
+    this.balance -= money
+    return money
+  };
+
   Account.prototype.createNewTransferment = function () {
     this.transfermentsList.push(new this.transferment())
   };
 
-  Account.prototype.transferAndRecord = function (moneyToTransfer) {
+  Account.prototype.depositAndRecord = function (moneyToTransfer) {
     this.createNewTransferment()
-    this.transferMoney(moneyToTransfer)
+    this.depositMoney(moneyToTransfer)
     this._lastTransfermentInstance().recordTransferment(moneyToTransfer, this.getBalance())
+  };
+
+  Account.prototype.withdrawAndRecord = function (moneyToTransfer) {
+    this.createNewTransferment()
   };
 
   Account.prototype._lastTransfermentInstance = function () {
