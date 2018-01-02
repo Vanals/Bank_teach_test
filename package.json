@@ -1,0 +1,27 @@
+{
+  "name": "bank_teach_test",
+  "version": "1.0.0",
+  "description": "Tech test training from makers Academy. Language chosen : Javascript.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-google": "^0.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vanals/Bank_teach_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vanals/Bank_teach_test/issues"
+  },
+  "homepage": "https://github.com/Vanals/Bank_teach_test#readme"
+}
