@@ -1,7 +1,7 @@
 (function(exports) {
 
-  function Account(name, surname, deposit = Deposit) {
-    this.deposit = deposit
+  function Account(name, surname, transferment = Transferment) {
+    this.transferment = transferment
     this.transfermentsList = []
     this.name = name
     this.surname = surname
@@ -20,24 +20,25 @@
     return this.balance
   };
 
-  Account.prototype.depositMoney = function (money) {
+  Account.prototype.transferMoney = function (money) {
     this.balance += money
     return money
   };
 
-  Account.prototype.createNewDeposit = function () {
-    this.transfermentsList.push(new this.deposit())
+  Account.prototype.createNewTransferment = function () {
+    this.transfermentsList.push(new this.transferment())
   };
 
-  Account.prototype.depositAndRecord = function (moneyToDeposit) {
-    this.createNewDeposit()
-    this.depositMoney(moneyToDeposit)
-    this._lastDepositInstance().recordDeposit(moneyToDeposit, this.getBalance())
+  Account.prototype.transferAndRecord = function (moneyToTransfer) {
+    this.createNewTransferment()
+    this.transferMoney(moneyToTransfer)
+    this._lastTransfermentInstance().recordTransferment(moneyToTransfer, this.getBalance())
   };
 
-  Account.prototype._lastDepositInstance = function () {
+  Account.prototype._lastTransfermentInstance = function () {
     return this.transfermentsList.slice(-1)[0]
   };
 
   exports.Account = Account;
+
 })(this);

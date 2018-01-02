@@ -5,7 +5,7 @@ describe('Account', function() {
   });
 
   describe('getName', function() {
-    it('get the name of the accoutn woner store in the this.name variable', function() {
+    it('get the name of the account owner store in the this.name variable', function() {
       expect(account.getName()).toEqual('Marco')
     });
   });
@@ -22,17 +22,17 @@ describe('Account', function() {
     });
   });
 
-  describe('depositMoney', function() {
-    it('deposit an ammount of money in the balance variable', function() {
-      account.depositMoney(1000)
+  describe('transferMoney', function() {
+    it('transfer an ammount of money in the balance variable', function() {
+      account.transferMoney(1000)
       expect(account.getBalance()).toEqual(1000)
-    });
+    });  // +
   });
 
-  describe('createNewDeposit', function() {
-    it('create a new instance of the class Deposit and push it in the deposits array', function() {
-      account.createNewDeposit()
-      expect(account.transfermentsList[0].constructor).toEqual(Deposit)
+  describe('createNewTransferment', function() {
+    it('create a new instance of the class Transferment and push it in the transfermentsList array', function() {
+      account.createNewTransferment()
+      expect(account.transfermentsList[0].constructor).toEqual(Transferment)
     });
   });
 

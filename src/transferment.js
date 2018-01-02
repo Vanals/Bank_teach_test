@@ -1,18 +1,18 @@
 (function(exports) {
 
-  function Deposit() {
-    this.balanceAfterDeposit = 0
-    this.moneyDeposited = 0
+  function Transferment() {
+    this.balanceAfterTransferment = 0
+    this.moneyTransfered = 0
     this.date = "NotGiven"
   }
 
-  Deposit.prototype.recordDeposit = function (moneyDepositing, Balance) {
-    this.balanceAfterDeposit = Balance
-    this.moneyDeposited = moneyDepositing
+  Transferment.prototype.recordTransferment = function (moneyTransfering, Balance) {
+    this.balanceAfterTransferment = Balance
+    this.moneyTransfered = moneyTransfering
     this._recordDate()
   };
 
-  Deposit.prototype._recordDate = function () {
+  Transferment.prototype._recordDate = function () {
     var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth()+1; //January is 0!
@@ -30,11 +30,11 @@
     return this.date = today
   };
 
-  Deposit.prototype._getDate = function () {
+  Transferment.prototype._getDate = function () {
     return this.date
   };
 
 
-  exports.Deposit = Deposit;
+  exports.Transferment = Transferment;
 
 })(this);
