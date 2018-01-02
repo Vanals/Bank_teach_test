@@ -12,5 +12,12 @@ describe('bank', function() {
     });
   });
 
+  describe('selectAccountOf', function() {
+    it('return an Account instance in base of its owner', function() {
+      bank.newAccount('Marco Vanali')
+      expect(bank.selectAccountOf('Marco Vanali').owner).toEqual('Marco Vanali')
+    });
+  });
+
 
 })
