@@ -20,7 +20,7 @@
     return this.balance
   };
 
-  Account.prototype.transferMoney = function (money) {
+  Account.prototype.depositMoney = function (money) {
     this.balance += money
     return money
   };

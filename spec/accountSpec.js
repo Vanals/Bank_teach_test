@@ -22,11 +22,11 @@ describe('Account', function() {
     });
   });
 
-  describe('transferMoney', function() {
-    it('transfer an ammount of money in the balance variable', function() {
-      account.transferMoney(1000)
+  describe('depositMoney', function() {
+    it('depositan ammount of money in the balance variable', function() {
+      account.depositMoney(1000)
       expect(account.getBalance()).toEqual(1000)
-    });  // +
+    }); 
   });
 
   describe('createNewTransferment', function() {
