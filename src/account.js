@@ -27,7 +27,7 @@
 
   Account.prototype.withdrawMoney = function (money) {
     this.balance -= money
-    return money
+    return  money
   };
 
   Account.prototype.createNewTransferment = function () {
@@ -42,10 +42,18 @@
 
   Account.prototype.withdrawAndRecord = function (moneyToTransfer) {
     this.createNewTransferment()
+    this._lastTransfermentInstance().recordTransferment(this.withdrawMoney(moneyToTransfer), this.getBalance())
   };
 
   Account.prototype._lastTransfermentInstance = function () {
     return this.transfermentsList.slice(-1)[0]
+  };
+
+  Account.prototype.accountStatement = function () {
+    transfermentsInfo= this.transfermentsList.map(transf => `${transf.date}   || ${transf.moneyTransfered} ||     ${transf.balanceAfterTransferment}\n`)
+    var statement = 'date || transferment || balance \n' +
+                    `${transfermentsInfo.join('')}`
+    return statement
   };
 
   exports.Account = Account;
