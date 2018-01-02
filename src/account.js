@@ -34,13 +34,13 @@
     this.transfersList.push(new this.transfer())
   };
 
-  Account.prototype.depositAndRecord = function (moneyToTransfer) {
+  Account.prototype.depositAndRecord = function (moneyToTransfer) { //
     this.createNewTransfer()
     this.depositMoney(moneyToTransfer)
     this._lastTransferInstance().recordTransfer(moneyToTransfer, this.getBalance())
   };
 
-  Account.prototype.withdrawAndRecord = function (moneyToTransfer) {
+  Account.prototype.withdrawAndRecord = function (moneyToTransfer) { //
     this.createNewTransfer()
     this._lastTransferInstance().recordTransfer(this.withdrawMoney(moneyToTransfer), this.getBalance())
   };
