@@ -5,7 +5,8 @@ Language chosen : Javascript.
 
 This tech-test challenge was to create a Bank script where a user can deposit and withdraw money and get an account statement of all the transfers.
 
-IMAGE
+![Bank_Script](https://image.ibb.co/f1Swrb/Screen_Shot_2018_01_03_at_11_47_31.png)
+
 
 ## How to use
 
