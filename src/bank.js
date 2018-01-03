@@ -6,8 +6,11 @@
   }
 
   Bank.prototype.newAccount = function(ownerName) {
-    this.accounts.push(new this.account(ownerName))
-    // TO DO: return error if account already exist
+    if (this.selectAccountOf(ownerName) === undefined) {
+      this.accounts.push(new this.account(ownerName))
+    } else {
+      throw 'Account already exist'
+    }
   };
 
 Bank.prototype.selectAccountOf = function(ownerName) {
@@ -15,11 +18,22 @@ Bank.prototype.selectAccountOf = function(ownerName) {
   return result[0]
 };
 
+Bank.prototype.depositMoneyInAccount = function(ownerName, amount) {
+  this.selectAccountOf(ownerName).depositAndRecord(amount)
+};
 
+Bank.prototype.withdrawMoneyFromAccount = function(ownerName, amount) {
+  this.selectAccountOf(ownerName).withdrawAndRecord(amount)
+};
+
+Bank.prototype.accountStatementOf = function(ownerName) {
+  return this.selectAccountOf(ownerName).accountStatement()
+};
+
+Bank.prototype.getBalanceOf = function(ownerName) {
+  return this.selectAccountOf(ownerName).getBalance()
+};
 
 exports.Bank = Bank;
 
 })(this);
-
-// Create account
-// take care of deposit and withdraw through the account

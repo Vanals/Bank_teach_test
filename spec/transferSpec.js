@@ -15,14 +15,13 @@ describe('Transfer', function() {
   FakeAccount.prototype.getBalance = function (money) {
     return this.balance
   };
+
   //MOCKS
 
   beforeEach(function() {
     transfer = new Transfer()
     fakeaccount = new FakeAccount()
   });
-
-
 
   describe('recordTransfer', function() {
     it('record an amount of money in the moneyTransfered variable and add it in the Account balance', function() {
@@ -33,8 +32,8 @@ describe('Transfer', function() {
   });
 
   describe('recordDate', function() {
-    it('record the currante Date in the this.date variable', function() {
-      transfer.recorddate = jasmine.createSpy("Date").and.returnValue("01/02/2018")
+    xit('record the currante Date in the this.date variable', function() {
+      transfer._recorddate = jasmine.createSpy("Date").and.returnValue("01/02/2018")
       transfer._recordDate()
       expect(transfer.date).toEqual("01/02/2018")
     });

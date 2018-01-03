@@ -3,18 +3,6 @@ describe('Account', function() {
   beforeEach(function() {
     account = new Account('Marco Vanali')
   });
-  //
-  // describe('getName', function() {
-  //   it('get the name of the account owner store in the this.name variable', function() {
-  //     expect(account.getName()).toEqual('Marco')
-  //   });
-  // });
-  //
-  // describe('getSurname', function() {
-  //   it('get the name of the accoutn woner store in the this.name variable', function() {
-  //     expect(account.getSurname()).toEqual('Vanali')
-  //   });
-  // });
 
   describe('getOwner', function() {
     it('get the name of the account owner store in the this.owner variable', function() {
@@ -40,7 +28,7 @@ describe('Account', function() {
       account.depositMoney(1000)
       account.withdrawMoney(200)
       expect(account.getBalance()).toEqual(800)
-      expect(account.withdrawMoney(200)).toEqual(200)
+      expect(account.withdrawMoney(200)).toEqual(-200)
     });
   });
 
@@ -52,10 +40,10 @@ describe('Account', function() {
   });
 
   describe('accountStatement', function() {
-    it('print out a table with the information about all the transferments', function() {
+    xit('print out a table with the information about all the transferments', function() {
       account.depositAndRecord(1000)
       account.withdrawAndRecord(200)
-      expect(account.accountStatement()).toEqual(`date || transferment || balance \n01/02/2018   || 1000 ||     1000\n01/02/2018   || 200 ||     800\n`)
+      expect(account.accountStatement()).toEqual(`date || transferment || balance \n01/03/2018   || 1000 ||     1000\n01/03/2018   || -200 ||     800\n`)
     });
   });
 
