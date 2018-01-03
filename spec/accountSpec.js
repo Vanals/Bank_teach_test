@@ -4,6 +4,12 @@ describe('Account', function() {
     account = new Account('Marco Vanali')
   });
 
+  //MOCKS
+
+  
+
+  //MOCKS
+
   describe('getOwner', function() {
     it('get the name of the account owner store in the this.owner variable', function() {
       expect(account.getOwner()).toEqual('Marco Vanali')

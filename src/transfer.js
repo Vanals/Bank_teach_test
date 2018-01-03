@@ -1,6 +1,7 @@
 (function(exports) {
 
-  function Transfer() {
+  function Transfer(dateformat = DateFormat) {
+    this.dateformat = new dateformat()
     this.balanceAfterTransfer = 0;
     this.moneyTransfered = 0;
     this.date = 'NotGiven';
@@ -12,28 +13,13 @@
     this._recordDate();
   };
 
-  Transfer.prototype._recordDate = function() {
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; // January is 0!
-    var yyyy = today.getFullYear();
-
-    if (dd<10) {
-        dd = '0'+dd;
-    }
-
-    if (mm<10) {
-        mm = '0'+mm;
-    }
-
-    today = mm + '/' + dd + '/' + yyyy;
-    return this.date = today;
+  Transfer.prototype._recordDate = function () {
+    this.date = this.dateformat._createDate()
   };
 
   Transfer.prototype._getDate = function() {
     return this.date;
   };
-
 
   exports.Transfer = Transfer;
 

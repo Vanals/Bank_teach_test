@@ -16,10 +16,18 @@ describe('Transfer', function() {
     return this.balance
   };
 
+  function FakeDateFormat() {
+
+  }
+
+  FakeDateFormat.prototype._createDate = function() {
+    return '01/01/2018'
+  };
+
   //MOCKS
 
   beforeEach(function() {
-    transfer = new Transfer()
+    transfer = new Transfer(FakeDateFormat)
     fakeaccount = new FakeAccount()
   });
 
@@ -32,10 +40,10 @@ describe('Transfer', function() {
   });
 
   describe('recordDate', function() {
-    xit('record the currante Date in the this.date variable', function() {
-      transfer._recorddate = jasmine.createSpy("Date").and.returnValue("01/02/2018")
+    it('record the currante Date in the this.date variable', function() {
+      console.log(transfer.dateformat)
       transfer._recordDate()
-      expect(transfer.date).toEqual("01/02/2018")
+      expect(transfer.date).toEqual("01/01/2018")
     });
   });
 
