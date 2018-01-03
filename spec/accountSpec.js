@@ -1,4 +1,4 @@
-describe('Account', function() {
+Fixeddescribe('Account', function() {
 
   beforeEach(function() {
     account = new Account('Marco Vanali')
