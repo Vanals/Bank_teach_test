@@ -22,8 +22,6 @@
     return today;
   };
 
-
-
   exports.DateFormat = DateFormat;
 
 })(this);

@@ -3,7 +3,7 @@
 Tech test training from makers Academy.
 Language chosen : Javascript.
 
-This tech-test challenge was to create a Bank script where a user can deposit and withdraw money and get an account statement of all the transfers.
+This tech-test challenge was to create a Bank script where a user can deposit, withdraw money and get an account statement for all the transfers.
 
 ![Bank_Script](https://image.ibb.co/f1Swrb/Screen_Shot_2018_01_03_at_11_47_31.png)
 
@@ -32,12 +32,11 @@ bank = new Bank();
 ```
 ## Approach
 
-Given the tech test requirement I started drawing a diagram getting an idea of how my script had to work/communicate. I named the classes deciding which responsability they should have.
+Following the tech test requirements, I drew a diagram to get an idea of how my script had to work. I named the classes, deciding which responsibility they should have.
 
-Given the task, the script had to allow an user to deposit, withdraw money and get an account statement with the information of all the transfers.
-The account statement had to contain the data, balance and amount of money of the transfer.
+Given the task, the script allows a user to deposit, withdraw money and print an account statement with the information of the transfers. The account statement contains the following data: balance and money transferred.
 
-Secondly I wrote user stories ad guide and then following the TDD approach developed my code.
+Secondly I wrote user stories as a guide and then following the TDD approach I developed in my code.
 
 #### Requirements (make a list interface)
 You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
