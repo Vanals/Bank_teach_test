@@ -6,7 +6,16 @@ describe('Account', function() {
 
   //MOCKS
 
-  
+  function FakeTransfer() {
+    this.balanceAfterTransfer = 0;
+    this.moneyTransfered = 0;
+    this.date = '01/01/2018'
+  }
+
+  FakeTransfer.prototype.recordTransfer = function(moneyTransfering, Balance) {
+    this.balanceAfterTransfer = Balance;
+    this.moneyTransfered = moneyTransfering;
+  };
 
   //MOCKS
 
@@ -46,10 +55,11 @@ describe('Account', function() {
   });
 
   describe('accountStatement', function() {
-    xit('print out a table with the information about all the transferments', function() {
-      account.depositAndRecord(1000)
-      account.withdrawAndRecord(200)
-      expect(account.accountStatement()).toEqual(`date || transferment || balance \n01/03/2018   || 1000 ||     1000\n01/03/2018   || -200 ||     800\n`)
+    it('print out a table with the information about all the transferments', function() {
+      accountWithFakeTransfer = new Account(FakeTransfer)
+      accountWithFakeTransfer.depositAndRecord(1000)
+      accountWithFakeTransfer.withdrawAndRecord(200)
+      expect(accountWithFakeTransfer.accountStatement()).toEqual(`date || transferment || balance \n01/03/2018   || 1000 ||     1000\n01/03/2018   || -200 ||     800\n`)
     });
   });
 
